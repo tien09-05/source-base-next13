@@ -20,6 +20,6 @@ function removeUndefinedAndNull(obj: Object) {
   return result;
 }
 
-const REQUIRE_ENV = ['NEXT_PUBLIC_API_ENDPOINT'];
+const REQUIRE_ENV = ['NEXT_PUBLIC_API_URL'];
 
 export { getDictionary, removeUndefinedAndNull, REQUIRE_ENV };
