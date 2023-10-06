@@ -4,8 +4,12 @@ import { WEB_ROUTES } from '@utils/constants/routes.constant';
 import { REQUIRE_ENV } from '@utils/helpers';
 
 async function middleware(request: NextRequest) {
-  const accessToken = JSON.parse(request.cookies.get('auth')?.value!)?.state
-    ?.auth?.accessToken;
+  let accessToken = '';
+  const authCookies = request.cookies.get('auth')?.value;
+
+  if (authCookies) {
+    accessToken = JSON.parse(authCookies)?.state?.auth?.accessToken;
+  }
 
   if (request.nextUrl.pathname === WEB_ROUTES.HOME) {
     if (accessToken) {
