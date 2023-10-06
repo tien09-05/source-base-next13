@@ -3,8 +3,7 @@ import { getCookie } from 'cookies-next';
 import queryString from 'query-string';
 
 const axiosClient: AxiosInstance = axios.create({
-  // baseURL: process.env.NEXT_PUBLIC_API_URL,
-  baseURL: 'https://fakestoreapi.com/',
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
   headers: {
     'Content-Type': 'application/json',
   },
