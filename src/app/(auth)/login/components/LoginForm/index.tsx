@@ -15,7 +15,7 @@ type FieldType = {
 const LoginForm: React.FC = () => {
   const router = useRouter();
 
-  const { mutate: login } = useLogin();
+  const { mutate: login, isLoading } = useLogin();
   const { login: loginState } = useAuthStore();
 
   const onFinish = async (values: any) => {
@@ -72,7 +72,7 @@ const LoginForm: React.FC = () => {
       </Form.Item>
 
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type="primary" htmlType="submit">
+        <Button type="primary" htmlType="submit" loading={isLoading}>
           Submit
         </Button>
       </Form.Item>
