@@ -5,6 +5,11 @@ import { useRouter } from 'next/navigation';
 import { useLogin } from '@hooks/query-hooks/useAuth';
 import { useAuthStore } from '@stores/auth';
 import { Button, Form, Input } from 'antd';
+import classNames from 'classnames/bind';
+
+import styles from './login-form.module.scss';
+
+const cx = classNames.bind(styles);
 
 type FieldType = {
   username?: string;
@@ -72,7 +77,12 @@ const LoginForm: React.FC = () => {
       </Form.Item>
 
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type="primary" htmlType="submit" loading={isLoading}>
+        <Button
+          type="primary"
+          htmlType="submit"
+          loading={isLoading}
+          className={cx('btn')}
+        >
           Submit
         </Button>
       </Form.Item>
