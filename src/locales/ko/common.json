@@ -9,5 +9,11 @@
       "priority": "Độ ưu tiên",
       "action": "Hành động"
     }
+  },
+  "menu": {
+    "elderly_management": "수급자 관리",
+    "beneficiary_information": "수급자 정보",
+    "find_a_caregiver": "요양보호사 찾기",
+    "state_change": "상태변화"
   }
 }

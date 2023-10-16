@@ -20,7 +20,6 @@ const ModalAddEditUser = ({
   handleOk,
 }: ModalAddEditUserProps) => {
   const [form] = Form.useForm();
-
   const { data } = useFetchUser(editUserId);
 
   useEffect(() => {

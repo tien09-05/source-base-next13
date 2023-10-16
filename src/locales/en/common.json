@@ -9,5 +9,11 @@
       "priority": "Priority",
       "action": "Action"
     }
+  },
+  "menu": {
+    "elderly_management": "Elderly Management",
+    "beneficiary_information": "Beneficiary information",
+    "find_a_caregiver": "Find a caregiver",
+    "state_change": "state change"
   }
 }

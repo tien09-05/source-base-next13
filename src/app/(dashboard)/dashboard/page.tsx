@@ -1,7 +1,6 @@
 'use client';
 
-/* eslint-disable import/no-unused-modules */
-import { Suspense, useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { SEO } from '@configs/seo.config';
 import { useTranslations } from '@hooks/locales.hook';
@@ -72,17 +71,17 @@ const Page = () => {
                 style={{ width: 120 }}
                 onChange={handleChangeLocale}
                 options={[
+                  { value: 'ko', label: 'Korean' },
                   { value: 'en', label: 'English' },
-                  { value: 'vi', label: 'Tiếng Việt' },
                 ]}
               />
               <Button onClick={onLogout}>Logout</Button>
             </Space>
           </Col>
         </Row>
-        <Suspense fallback={<div>Loading...</div>}>
-          <TaskTable showModalAddEditUser={showModal} deleteUser={deleteUser} />
-        </Suspense>
+        {/* <Suspense fallback={<Loading />}> */}
+        <TaskTable showModalAddEditUser={showModal} deleteUser={deleteUser} />
+        {/* </Suspense> */}
         {isShowModal && (
           <ModalAddEditUser
             editUserId={editUserId}

@@ -6,4 +6,4 @@ interface ILocalesState {
   setDict: (locale: TDefaultLocale) => void;
 }
 
-type TDefaultLocale = 'en' | 'vi';
+type TDefaultLocale = 'ko' | 'en';

@@ -1,9 +1,9 @@
 const dictionaries = {
   en: () => import('@locales/en/common.json').then((module) => module.default),
-  vi: () => import('@locales/vi/common.json').then((module) => module.default),
+  ko: () => import('@locales/ko/common.json').then((module) => module.default),
 };
 
-const getDictionary = async (locale: 'vi' | 'en') => dictionaries[locale]();
+const getDictionary = async (locale: 'ko' | 'en') => dictionaries[locale]();
 
 function removeUndefinedAndNull(obj: Object) {
   const result: Record<string, any> = {};

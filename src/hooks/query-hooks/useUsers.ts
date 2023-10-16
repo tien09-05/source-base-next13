@@ -20,6 +20,7 @@ export const useFetchUsersList = (
     queryKey: [QUERY_KEYS.GET_USERS, params],
     queryFn: async () => {
       const url = `${API_ROUTES.USERS}`;
+
       return await axiosClient.get(url, { params });
     },
     retry: false,
