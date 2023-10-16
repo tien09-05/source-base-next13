@@ -33,6 +33,11 @@ export default function DashboardLayout({
 
   const menuItems = [
     {
+      key: 'dashboard',
+      icon: <UserOutlined />,
+      label: t('menu.dashboard'),
+    },
+    {
       key: 'elderly_management',
       icon: <UserOutlined />,
       label: t('menu.elderly_management'),
@@ -58,14 +63,14 @@ export default function DashboardLayout({
   }
 
   function onClickMenu({ keyPath }: { keyPath: string[] }) {
-    router.push(keyPathToPath(keyPath));
+    const path = keyPathToPath(keyPath);
+    router.push(path);
   }
 
   const [defaultSelectedKeys, defaultOpenKeys] = useMemo(() => {
     return [[pathname.split('/')[2]], [pathname.split('/')[1]]];
   }, [pathname]);
 
-  console.log(collapseSiderWidth);
   return (
     <Layout>
       <Sider
@@ -98,7 +103,9 @@ export default function DashboardLayout({
 
         <Menu
           mode="inline"
-          defaultSelectedKeys={defaultSelectedKeys}
+          defaultSelectedKeys={
+            defaultSelectedKeys[0] ? defaultSelectedKeys : defaultOpenKeys
+          }
           defaultOpenKeys={defaultOpenKeys}
           items={menuItems}
           onClick={onClickMenu}

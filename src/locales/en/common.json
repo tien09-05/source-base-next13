@@ -11,6 +11,7 @@
     }
   },
   "menu": {
+    "dashboard": "Dashboard",
     "elderly_management": "Elderly Management",
     "beneficiary_information": "Beneficiary information",
     "find_a_caregiver": "Find a caregiver",

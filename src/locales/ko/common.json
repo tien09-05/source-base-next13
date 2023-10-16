@@ -11,6 +11,7 @@
     }
   },
   "menu": {
+    "dashboard": "대시보드",
     "elderly_management": "수급자 관리",
     "beneficiary_information": "수급자 정보",
     "find_a_caregiver": "요양보호사 찾기",
