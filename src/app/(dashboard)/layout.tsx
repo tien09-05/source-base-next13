@@ -3,13 +3,10 @@
 import React, { useMemo, useState } from 'react';
 import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
-import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  UserOutlined,
-} from '@ant-design/icons';
+import { UserOutlined } from '@ant-design/icons';
+import Icon from '@ant-design/icons/lib/components/Icon';
 import { useTranslations } from '@hooks/locales.hook';
-import { Avatar, Button, Layout, Menu, theme } from 'antd';
+import { Avatar, Button, Layout, Menu, Space, theme } from 'antd';
 import classNames from 'classnames/bind';
 
 import styles from './style.module.scss';
@@ -28,18 +25,24 @@ export default function DashboardLayout({
   const pathname = usePathname();
   const [collapsed, setCollapsed] = useState(false);
   const {
-    token: { colorBgContainer, siderWidth, collapseSiderWidth, headerHeight },
+    token: {
+      colorBgContainer,
+      siderWidth,
+      collapseSiderWidth,
+      headerHeight,
+      bgColor,
+    },
   } = theme.useToken() as any;
 
   const menuItems = [
     {
       key: 'dashboard',
-      icon: <UserOutlined />,
+      icon: <Icon component={() => <i className="xi-home-o"></i>} />,
       label: t('menu.dashboard'),
     },
     {
       key: 'elderly_management',
-      icon: <UserOutlined />,
+      icon: <Icon component={() => <i className="xi-user-o"></i>} />,
       label: t('menu.elderly_management'),
       children: [
         {
@@ -53,6 +56,17 @@ export default function DashboardLayout({
         {
           key: 'state_change',
           label: t('menu.state_change'),
+        },
+      ],
+    },
+    {
+      key: 'staff_management',
+      icon: <Icon component={() => <i className="xi-users-o"></i>} />,
+      label: t('menu.staff_management'),
+      children: [
+        {
+          key: 'staff_information',
+          label: t('menu.staff_information'),
         },
       ],
     },
@@ -85,7 +99,12 @@ export default function DashboardLayout({
           {collapsed ? (
             <div></div>
           ) : (
-            <Image alt="logo" src={'/h_logo.svg'} width={150} height={49} />
+            <Image
+              alt="logo"
+              src={'/h_logo.svg'}
+              width={150}
+              height={headerHeight}
+            />
           )}
         </div>
 
@@ -119,11 +138,17 @@ export default function DashboardLayout({
             height: headerHeight,
             display: 'flex',
             alignItems: 'center',
+            justifyContent: 'space-between',
+            backgroundColor: bgColor,
           }}
         >
           <Button
             type="text"
-            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+            icon={
+              <Icon
+                component={() => <i className="xi-bars text-white"></i>}
+              ></Icon>
+            }
             onClick={() => setCollapsed(!collapsed)}
             style={{
               fontSize: '16px',
@@ -131,6 +156,19 @@ export default function DashboardLayout({
               height: headerHeight,
             }}
           />
+          <Space size={'middle'}>
+            <div className={cx('chip')}>9월 12일 월요일 14:22</div>
+            <Icon
+              component={() => (
+                <i className={cx('xi-user-o ', 'text-quaternary', 'icon')}></i>
+              )}
+            ></Icon>
+            <Icon
+              component={() => (
+                <i className={cx('xi-log-out ', 'text-quaternary', 'icon')}></i>
+              )}
+            ></Icon>
+          </Space>
         </Header>
         <Content
           style={{

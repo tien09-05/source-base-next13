@@ -15,6 +15,8 @@
     "elderly_management": "수급자 관리",
     "beneficiary_information": "수급자 정보",
     "find_a_caregiver": "요양보호사 찾기",
-    "state_change": "상태변화"
+    "state_change": "상태변화",
+    "staff_management": "직원관리",
+    "staff_information": "직원정보"
   }
 }

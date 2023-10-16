@@ -1,0 +1,31 @@
+@import 'https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css';
+
+.text-white {
+  color: #fff;
+}
+
+.text-primary {
+  color: #222;
+}
+
+.text-secondary {
+  color: #555;
+}
+
+.text-tertiary {
+  color: #777;
+}
+
+.text-quaternary {
+  color: #afb3ba;
+}
+
+.chip {
+  padding: 0 16px;
+  height: 34px;
+  line-height: 34px;
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  background-color: #fff;
+}

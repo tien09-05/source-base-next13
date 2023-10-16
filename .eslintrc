@@ -24,6 +24,7 @@
     "quotes": "off",
     "linebreak-style":0,
     "space-before-function-paren": 0,
-    "guard-for-in":0
+    "guard-for-in":0,
+    "stylelint-disable":0
   }
 }

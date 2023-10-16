@@ -12,6 +12,7 @@ export interface TokenCustom extends AliasToken {
   siderWidth: number;
   collapseSiderWidth: number;
   headerHeight: number;
+  bgColor: string;
 }
 
 interface ThemeConfigCustom extends ThemeConfig {
@@ -24,7 +25,8 @@ const THEME_CONFIG: ThemeConfigCustom = {
           'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'`,
     siderWidth: 240,
     collapseSiderWidth: 60,
-    headerHeight: 49,
+    headerHeight: 60,
+    bgColor: '#38475F',
   },
 };
 

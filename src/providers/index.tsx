@@ -4,7 +4,6 @@ import '@styles/globals.scss';
 import 'antd/dist/reset.css';
 
 import React, { useEffect } from 'react';
-import Head from 'next/head';
 import { queryConfig } from '@configs/query.config';
 import { THEME_CONFIG } from '@configs/theme.config';
 import { useLocalesStore } from '@stores/locales';
@@ -29,12 +28,6 @@ function Providers({ children }: any) {
 
   return (
     <>
-      <Head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
-      </Head>
       <QueryClientProvider client={queryClient}>
         <ConfigProvider autoInsertSpaceInButton={false} theme={THEME_CONFIG}>
           {hydated && (
