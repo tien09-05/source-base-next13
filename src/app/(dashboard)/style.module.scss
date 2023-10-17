@@ -34,4 +34,10 @@
 
 .icon {
   font-size: 22px;
+  padding: 8px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(0 0 0 / 6%);
+  }
 }

@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Head from 'next/head';
 import Providers from '@providers/index';
 
 import './style.scss';
@@ -19,12 +18,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
-      </Head>
+        <link
+          href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+          rel="stylesheet"
+        />
+      </head>
       <body className={inter.className}>
         <Providers>{children}</Providers>
       </body>

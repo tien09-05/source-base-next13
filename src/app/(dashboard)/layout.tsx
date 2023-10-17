@@ -6,6 +6,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { UserOutlined } from '@ant-design/icons';
 import Icon from '@ant-design/icons/lib/components/Icon';
 import { useTranslations } from '@hooks/locales.hook';
+import { useAuthStore } from '@stores/auth';
 import { Avatar, Button, Layout, Menu, Space, theme } from 'antd';
 import classNames from 'classnames/bind';
 
@@ -23,6 +24,9 @@ export default function DashboardLayout({
   const { t } = useTranslations();
   const router = useRouter();
   const pathname = usePathname();
+
+  const { logout } = useAuthStore();
+
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: {
@@ -79,6 +83,11 @@ export default function DashboardLayout({
   function onClickMenu({ keyPath }: { keyPath: string[] }) {
     const path = keyPathToPath(keyPath);
     router.push(path);
+  }
+
+  function onLogout() {
+    logout();
+    router.push('/login');
   }
 
   const [defaultSelectedKeys, defaultOpenKeys] = useMemo(() => {
@@ -156,7 +165,12 @@ export default function DashboardLayout({
               height: headerHeight,
             }}
           />
-          <Space size={'middle'}>
+          <Space
+            size={'small'}
+            style={{
+              marginRight: 8,
+            }}
+          >
             <div className={cx('chip')}>9월 12일 월요일 14:22</div>
             <Icon
               component={() => (
@@ -167,6 +181,7 @@ export default function DashboardLayout({
               component={() => (
                 <i className={cx('xi-log-out ', 'text-quaternary', 'icon')}></i>
               )}
+              onClick={onLogout}
             ></Icon>
           </Space>
         </Header>
