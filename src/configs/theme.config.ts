@@ -28,6 +28,13 @@ const THEME_CONFIG: ThemeConfigCustom = {
     headerHeight: 60,
     bgColor: '#38475F',
   },
+  // components: {
+  //   Button: {
+  //     colorPrimary: '#2AAD9B',
+  //     colorPrimaryHover: '#2AF1AD',
+  //     motion: false,
+  //   },
+  // },
 };
 
 export { THEME_CONFIG };

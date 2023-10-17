@@ -1,7 +1,5 @@
-import React from 'react';
-
 const Page = () => {
-  return <div>beneficiary_information</div>;
+  return <div>beneficiary_informatinnon</div>;
 };
 
 export default Page;

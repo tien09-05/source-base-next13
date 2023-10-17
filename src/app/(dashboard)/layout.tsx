@@ -28,6 +28,7 @@ export default function DashboardLayout({
   const { logout } = useAuthStore();
 
   const [collapsed, setCollapsed] = useState(false);
+
   const {
     token: {
       colorBgContainer,

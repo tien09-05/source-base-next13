@@ -29,3 +29,21 @@
   border-radius: 30px;
   background-color: #fff;
 }
+
+.ant-modal-content {
+  padding: 14px 24px !important;
+}
+
+.ant-modal-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.ant-modal-close {
+  top: 12px !important;
+  width: fit-content !important;
+
+  &:hover {
+    background-color: unset !important;
+  }
+}
